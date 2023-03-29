@@ -1,19 +1,35 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import AutorisationView from '../views/AutorisationView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: '',
+    name: 'default_layout',
+    component: () => import('@/layouts/DefaultLayout.vue'),
+    redirect: { name: 'orders' },
+    children: [
+      {
+        path: 'orders',
+        name: 'orders',
+        component: () => import('@/views/OrdersView.vue')
+      },
+      {
+        path: 'create-order',
+        name: 'create-order',
+        component: () => import('@/views/CreateOrderView.vue')
+      },
+      {
+        path: '/:catchAll(.*)',
+        name: 'not_found',
+        redirect: { name: 'orders' },
+      }
+    ]
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/autorisation',
+    name: 'autorisation',
+    component: AutorisationView
   }
 ]
 

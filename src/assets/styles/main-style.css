@@ -1,0 +1,420 @@
+@import "./variables.css";
+@import "./defaultSettings.css";
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Golos Text', sans-serif;
+}
+
+.ui-form input {
+    background-color: var(--semi-gray);
+    padding: 16px 20px 16px 48px;
+    border-radius: 6px;
+    width: 100%;
+    transition: all .5s;
+    min-width: 240px;
+}
+
+.ui-form input:focus {
+    padding: 16px 20px 16px 20px;
+}
+
+.ui-form .forms {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.create-order-form button,
+.ui-form button {
+    color: var(--white);
+    background-color: var(--main-color);
+    padding: 16px 30px;
+    border-radius: 6px;
+    transition: all .5s;
+}
+
+.create-order-form button:hover,
+.ui-form button:hover {
+    background-color: var(--main-color-lighter);
+}
+
+.ui-form button.blocked {
+    background-color: var(--semi-gray);
+    color: var(--semi-black);
+    cursor: not-allowed;
+}
+
+.ui-form {
+    box-shadow: var(--main-box-shadow);
+    max-width: 500px;
+    padding: 26px;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.auth-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.create-order-block .input-field .error,
+.ui-form .error {
+    color: var(--error-color);
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.ui-form .form .input-box {
+    position: relative;
+}
+
+.ui-form .input-box label {
+    position: absolute;
+    left: 12px;
+
+    height: 100%;
+    width: 26px;
+    display: flex;
+    align-items: center;
+}
+
+.ui-form .input-box label img {
+    transition: all .5s;
+    height: 26px;
+    width: 26px;
+    filter: brightness(0) invert(.5);
+}
+
+.ui-form label:has(+ input:focus) img {
+    width: 0px;
+    height: 0px;
+}
+
+.create-order-block .input-field input:has(+ .error),
+.create-order-block .input-field textarea:has(+ .error),
+.ui-form .input-box:has(+ .error) input {
+    outline: solid var(--error-color) 1px;
+    /* background-color: red; */
+    /* border: solid red 2px; */
+}
+
+header .header-content {
+    height: 70px;
+    background-color: var(--main-color);
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: var(--main-box-shadow);
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+header {
+    padding: 0 14px;
+    margin-bottom: 26px;
+}
+
+header * {
+    font-size: 14px;
+    color: var(--white);
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+header .auth-bar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+header .auth-bar button.exit-button {
+    color: var(--white);
+    transition: all .5s;
+}
+
+header .auth-bar button.exit-button:hover {
+    background-color: var(--main-color-darker);
+}
+
+header .auth-bar .user-name {
+    color: var(--white);
+}
+
+.nav-bar a {
+    text-decoration: none;
+}
+
+.nav-bar li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-radius: 2px;
+    align-items: center;
+    position: relative;
+    transition: all .5s;
+}
+
+header .auth-bar button.exit-button,
+header .nav-bar li {
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.nav-bar .underline {
+    height: 1px;
+    background-color: var(--white);
+    width: 0%;
+    transition: all .5s;
+    position: absolute;
+    top: 18px;
+}
+
+.nav-bar li:has(a:hover) {
+    /* width: 100%; */
+    background-color: var(--main-color-lighter);
+}
+
+.orders-table-block {
+    overflow-x: scroll;
+    padding-right: 70px;
+}
+
+.orders-table-block::-webkit-scrollbar {
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* border: 1px solid; */
+    min-width: 800px;
+    border-radius: 10px;
+    /* overflow: hidden; */
+    box-shadow: var(--main-box-shadow);
+}
+
+thead {
+    background-color: var(--main-color);
+    color: white;
+}
+
+
+
+th {
+    padding: 14px 0;
+    font-weight: 500;
+    font-size: 14px;
+    /* border: solid 1px var(--white); */
+}
+
+th.last {
+    border-radius: 0 10px 0 0;
+    overflow: hidden;
+}
+
+tr .actions {
+    position: absolute;
+    right: -70px;
+    display: flex;
+    gap: 6px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+tr .actions button {
+    background-color: var(--semi-gray);
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    padding: 6px;
+    transition: all .5s;
+
+}
+
+tr .actions button:hover {
+    background-color: var(--main-color);
+}
+
+tr .actions button:hover img {
+    filter: brightness(0) invert(1)
+}
+
+tr .actions button img {
+    height: 100%;
+    width: 100%;
+    filter: brightness(0) invert(.3);
+    transition: all .5s;
+}
+
+tr {
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    /* right: -20px; */
+}
+
+td {
+    padding: 10px 0;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--white);
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--semi-gray);
+}
+
+table {
+    /* border-collapse: collapse; */
+    /* border: 1px solid black; */
+}
+
+th {
+    border: 1px solid var(--main-color-lighter);
+    border-top: 0px;
+}
+
+td {
+    border: 1px solid #c4c4c4;
+}
+
+thead tr th:first-child {
+    border-radius: 10px 0 0 0;
+    border-left: 0px;
+}
+
+thead tr th:last-child {
+    border-radius: 0 10px 0 0;
+    border-right: 0px;
+}
+
+.create-order-block {
+    background-color: var(--white);
+    box-shadow: var(--main-box-shadow);
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.create-order-block .input-field {
+    position: relative;
+}
+
+.create-order-block .input-field label {
+    /* position: absolute; */
+    font-size: 14px;
+    /* top: 14px;
+    left: 14px; */
+    transition: all .5s;
+}
+
+.create-order-block .input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.create-order-block .input-field label {
+    margin-left: 10px;
+}
+
+.create-order-block .input-field {}
+
+.create-order-form input,
+.create-order-form textarea {
+    background-color: var(--semi-gray);
+    padding: 14px;
+    border-radius: 6px;
+    width: 100%;
+}
+
+/* .create-order-form label:has(+ input:focus),
+.create-order-form label:has(+ textarea:focus) {
+    top: -20px;
+} */
+
+.create-order-form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+}
+
+.create-order-form .comment {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.create-order-block .form-title {
+    background-color: var(--main-color);
+    color: var(--white);
+    padding: 20px;
+}
+
+.create-order-block .create-order-form {
+    padding: 20px;
+}
+
+.modal-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    backdrop-filter: blur(3px);
+}
+
+.modal-win {
+    background-color: var(--white);
+    padding: 20px;
+    box-shadow: var(--main-box-shadow);
+    border-radius: 10px;
+    min-width: 300px;
+}
+
+.accept-modal .actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.accept-modal .actions button{
+    background-color: var(--main-color);
+    color: var(--white);
+    border-radius: 4px;
+    padding: 6px 0;
+    transition: all .5s;
+}
+.accept-modal .actions button:hover{
+    background-color: var(--main-color-lighter);
+}
+.accept-modal{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+}
+.accept-modal .message{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
