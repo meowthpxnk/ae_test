@@ -5,11 +5,15 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start:server": "json-server --watch server/db.json --routes server/routes.json",
+    "start:app-with-server": "concurrently \"npm run start:server\" \"npm run serve\""
   },
   "dependencies": {
     "axios": "^1.3.4",
+    "concurrently": "^8.0.1",
     "core-js": "^3.8.3",
+    "json-server": "^0.17.3",
     "pinia": "^2.0.33",
     "vue": "^3.2.13",
     "vue-class-component": "^8.0.0-0",
@@ -35,7 +39,8 @@
   "eslintConfig": {
     "root": true,
     "env": {
-      "node": true
+      "node": true,
+      "vue/setup-compiler-macros": true
     },
     "extends": [
       "plugin:vue/vue3-essential",

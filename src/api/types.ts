@@ -5,11 +5,28 @@ export interface UserModel {
   user: string,
 }
 
+export interface OrderModel {
+  id: number,
+  name: string,
+  address: string,
+  date: string,
+  status: 'completed' | 'new',
+  comment: string,
+}
+
+
 export interface AuthInput {
   user: string;
   password: string;
 }
 
-export interface apiAuthResponce {
+// export interface apiAuthResponce {
+//   status: string;
+// }
+
+export interface ApiAuthResponce {
   status: string;
+  data: {
+    user: UserModel;
+  }
 }

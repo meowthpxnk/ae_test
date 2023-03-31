@@ -1,0 +1,6 @@
+{
+    "/api/*": "/$1",
+    "/events-:id": "/events/:id",
+    "/auth/me?user=:user&password=:password": "/users?user=:user&password=:password",
+    "/users/me": "/user_data"
+}

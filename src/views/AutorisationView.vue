@@ -1,19 +1,14 @@
 <template>
-  <AutorisationComponent/>
+  <AutorisationComponent />
 </template>
 
-<script lang="ts">
-import AutorisationComponent from '@/components/AutorisationComponent.vue';
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import AutorisationComponent from "@/components/AutorisationComponent.vue";
+// import { defineComponent } from "vue";
 
-export default defineComponent({
-    setup() {
-        return {};
-    },
-    components: { AutorisationComponent }
-})
+// import { useAuthorisationStore } from "@/store/auth_form";
+// const auth_store = useAuthorisationStore();
 </script>
 
 <style scoped>
-
 </style>

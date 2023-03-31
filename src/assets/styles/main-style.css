@@ -12,7 +12,7 @@
     border-radius: 6px;
     width: 100%;
     transition: all .5s;
-    min-width: 240px;
+    min-width: 300px;
 }
 
 .ui-form input:focus {
@@ -38,7 +38,7 @@
 .ui-form button:hover {
     background-color: var(--main-color-lighter);
 }
-
+.create-order-form button.blocked,
 .ui-form button.blocked {
     background-color: var(--semi-gray);
     color: var(--semi-black);
@@ -191,6 +191,8 @@ header .nav-bar li {
 
 .orders-table-block {
     overflow-x: scroll;
+}
+.orders-table-block.admin-pannel{
     padding-right: 70px;
 }
 
@@ -212,8 +214,6 @@ thead {
     background-color: var(--main-color);
     color: white;
 }
-
-
 
 th {
     padding: 14px 0;
