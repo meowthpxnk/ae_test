@@ -51,15 +51,15 @@ export const useCreateOrderStore = defineStore({
         } as FormData
     ),
     getters: {
-        isInvalidForm() {
+        isInvalidForm(state): boolean {
             const flags: boolean[] = []
 
-            for (const key of Object.keys(this.name.errors_list)) {
-                flags.push(this.name.errors_list[key as keyof ValidateReq])
+            for (const key of Object.keys(state.name.errors_list)) {
+                flags.push(state.name.errors_list[key as keyof ValidateReq])
             }
 
-            for (const key of Object.keys(this.address.errors_list)) {
-                flags.push(this.address.errors_list[key as keyof ValidateReq])
+            for (const key of Object.keys(state.address.errors_list)) {
+                flags.push(state.address.errors_list[key as keyof ValidateReq])
             }
 
             return !flags.every(key => key === false)

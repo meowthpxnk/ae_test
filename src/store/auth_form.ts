@@ -50,15 +50,15 @@ export const useAuthorisationStore = defineStore({
     } as FormData
   ),
   getters: {
-    isInvalidForm() {
+    isInvalidForm(state): boolean {
       const flags: boolean[] = []
 
-      for (const key of Object.keys(this.username.errors_list)) {
-        flags.push(this.username.errors_list[key as keyof ValidateReq])
+      for (const key of Object.keys(state.username.errors_list)) {
+        flags.push(state.username.errors_list[key as keyof ValidateReq])
       }
 
-      for (const key of Object.keys(this.password.errors_list)) {
-        flags.push(this.password.errors_list[key as keyof ValidateReq])
+      for (const key of Object.keys(state.password.errors_list)) {
+        flags.push(state.password.errors_list[key as keyof ValidateReq])
       }
 
       return !flags.every(key => key === false)
