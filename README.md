@@ -5,7 +5,7 @@
 npm install
 ```
 
-### Run project
+## Run project
 ```
 npm run start:app-with-server
 ```
